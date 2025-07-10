@@ -172,7 +172,8 @@ config-version: 1 # Do not change this value
 | `gshow.view.enderchest`     | View shared ender chests                     |
 | `gshow.view.money`          | View shared money information                |
 | `gshow.view.ping`           | View shared ping information                 |
-| `gshow.view.item`           | View items shown in chat                     |
+| `gshow.view.item`           | View shared items shown in chat              |
+| `gshow.view.shulker`        | View shared shulker shown in chat            |
 
 ---
 
