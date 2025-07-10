@@ -68,27 +68,28 @@ A comprehensive Minecraft plugin that allows players to **share their inventory,
 # Example: money: []
 # Example: ping: []
 # Example: item: []
+
 patterns:
   inventory:
-    - "\[inv\]"
-    - "\[inventory\]"
-    - "\[items\]"
+    - "\\[inv\\]"
+    - "\\[inventory\\]"
+    - "\\[items\\]"
   enderchest:
-    - "\[enderchest\]"
-    - "\[ender\]"
-    - "\[ec\]"
+    - "\\[enderchest\\]"
+    - "\\[ender\\]"
+    - "\\[ec\\]"
   money:
-    - "\[money\]"
-    - "\[balance\]"
-    - "\[bal\]"
+    - "\\[money\\]"
+    - "\\[balance\\]"
+    - "\\[bal\\]"
   ping:
-    - "\[ping\]"
-    - "\[ms\]"
-    - "\[latency\]"
+    - "\\[ping\\]"
+    - "\\[ms\\]"
+    - "\\[latency\\]"
   item:
-    - "\[item\]"
-    - "\[hand\]"
-    - "\[i\]"
+    - "\\[item\\]"
+    - "\\[hand\\]"
+    - "\\[i\\]"
 
 # Chat output messages (supports color codes, hex and placeholders if PlaceholderAPI is installed)
 messages:
@@ -122,6 +123,11 @@ messages:
     no_item_in_hand: "&cYou must be holding an item to show it!"
     no_permission: "&cYou don't have permission to view items!"
     expired: "&cThis item view has expired!"
+  shulker:
+    format: "&e&lGSHOW &8/ &f{player} &7is showing &b{item}"
+    hover: "&eClick to view {player}'s shulker box"
+    no_permission: "&cYou don't have permission to view shulker boxes!"
+    expired: "&cThis shulker box view has expired!"
 
 # Settings
 settings:
@@ -129,7 +135,7 @@ settings:
   enable_live_updates: true # Whether to enable live updates for views
   require_permission: false # Whether to require permissions for "viewing"
 
-# Permissions
+# Permissions for commands and features
 permissions:
   use: "gshow.use"
   admin: "gshow.admin"
@@ -139,6 +145,9 @@ permissions:
     money: "gshow.view.money"
     ping: "gshow.view.ping"
     item: "gshow.view.item"
+    shulker: "gshow.view.shulker"
+
+config-version: 1 # Do not change this value
 ```
 
 </details>
