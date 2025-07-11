@@ -59,95 +59,87 @@ A comprehensive Minecraft plugin that allows players to **share their inventory,
 
 ```yaml
 # GShow Plugin Configuration
-# Color codes: &0-&9, &a-&f, &k-&o, &r
-
-# Regex patterns for detecting show commands in chat
-# To disable a feature simply remove the list and add [] after the feature
-# Example: inventory: []
-# Example: enderchest: []
-# Example: money: []
-# Example: ping: []
-# Example: item: []
-
-patterns:
-  inventory:
-    - "\\[inv\\]"
-    - "\\[inventory\\]"
-    - "\\[items\\]"
-  enderchest:
-    - "\\[enderchest\\]"
-    - "\\[ender\\]"
-    - "\\[ec\\]"
-  money:
-    - "\\[money\\]"
-    - "\\[balance\\]"
-    - "\\[bal\\]"
-  ping:
-    - "\\[ping\\]"
-    - "\\[ms\\]"
-    - "\\[latency\\]"
-  item:
-    - "\\[item\\]"
-    - "\\[hand\\]"
-    - "\\[i\\]"
 
 # Chat output messages (supports color codes, hex and placeholders if PlaceholderAPI is installed)
 messages:
   global:
-    no_permission: "&cYou don't have permission to use this command!"
-    reload_success: "&aGShow configuration reloaded successfully!"
+    no_permission: '&cYou don''t have permission to use this command!'
+    reload_success: '&aGShow configuration reloaded successfully!'
   inventory:
-    format: "&e&lGSHOW &8/ &f{player} &7is showing their &bInventory"
-    hover: "&eClick to view {player}'s inventory"
-    no_permission: "&cYou don't have permission to view inventories!"
-    expired: "&cThis inventory view has expired!"
+    enabled: true
+    format: '&e&lGSHOW &8/ &f{player} &7is showing their &bInventory'
+    hover: '&eClick to view {player}''s inventory'
+    no_permission: '&cYou don''t have permission to view inventories!'
+    expired: '&cThis inventory view has expired!'
   enderchest:
-    format: "&e&lGSHOW &8/ &f{player} &7is showing their &dEnder Chest"
-    hover: "&eClick to view {player}'s ender chest"
-    no_permission: "&cYou don't have permission to view ender chests!"
-    expired: "&cThis ender chest view has expired!"
+    enabled: true
+    format: '&e&lGSHOW &8/ &f{player} &7is showing their &dEnder Chest'
+    hover: '&eClick to view {player}''s ender chest'
+    no_permission: '&cYou don''t have permission to view ender chests!'
+    expired: '&cThis ender chest view has expired!'
   money:
-    format: "&e&lGSHOW &8/ &f{player} &7has &a{amount}"
-    hover: "&eShows {player}'s balance"
-    no_permission: "&cYou don't have permission to view balances!"
-    expired: "&cThis balance view has expired!"
+    enabled: true
+    format: '&e&lGSHOW &8/ &f{player} &7has &a{amount}'
+    hover: '&eShows {player}''s balance'
+    no_permission: '&cYou don''t have permission to view balances!'
+    expired: '&cThis balance view has expired!'
   ping:
-    format: "&e&lGSHOW &8/ &f{player} &7has &e{ping}ms &7ping"
-    hover: "&eShows {player}'s connection ping"
-    no_permission: "&cYou don't have permission to view ping!"
-    expired: "&cThis ping view has expired!"
+    enabled: true
+    format: '&e&lGSHOW &8/ &f{player} &7has &e{ping}ms &7ping'
+    hover: '&eShows {player}''s connection ping'
+    no_permission: '&cYou don''t have permission to view ping!'
+    expired: '&cThis ping view has expired!'
   item:
-    format_1x: "&e&lGSHOW &8/ &f{player} &7is showing &b{item}" # If the amount of item in hand is 1
-    format: "&e&lGSHOW &8/ &f{player} &7is showing &e{amount}x &b{item}" #  If the amount of item in hand is more than 1
-    hover: "&eClick to view {player}'s {item}"
-    no_item_in_hand: "&cYou must be holding an item to show it!"
-    no_permission: "&cYou don't have permission to view items!"
-    expired: "&cThis item view has expired!"
-  shulker:
-    format: "&e&lGSHOW &8/ &f{player} &7is showing &b{item}"
-    hover: "&eClick to view {player}'s shulker box"
-    no_permission: "&cYou don't have permission to view shulker boxes!"
-    expired: "&cThis shulker box view has expired!"
+    enabled: true
+    format_1x: '&e&lGSHOW &8/ &f{player} &7is showing &b{item}'
+    format: '&e&lGSHOW &8/ &f{player} &7is showing &e{amount}x &b{item}'
+    hover: '&eClick to view {player}''s {item}'
+    no_item_in_hand: '&cYou must be holding an item to show it!'
+    no_permission: '&cYou don''t have permission to view items!'
+    expired: '&cThis item view has expired!'
+
+# Regex patterns for detecting show commands in chat
+patterns:
+  inventory:
+    - \[inv\]
+    - \[inventory\]
+  enderchest:
+    - \[enderchest\]
+    - \[ender\]
+    - \[ec\]
+  money:
+    - \[money\]
+    - \[balance\]
+    - \[bal\]
+  ping:
+    - \[ping\]
+    - \[ms\]
+    - \[latency\]
+  item:
+    - \[item\]
+    - \[hand\]
+    - \[i\]
 
 # Settings
 settings:
-  view_timeout: 30  # in seconds
-  enable_live_updates: true # Whether to enable live updates for views
-  require_permission: false # Whether to require permissions for "viewing"
+  view_timeout: 30
+  enable_live_updates: true
+  require_permission: false
 
 # Permissions for commands and features
 permissions:
-  use: "gshow.use"
-  admin: "gshow.admin"
+  use: gshow.use
+  admin: gshow.admin
   view:
-    inventory: "gshow.view.inventory"
-    enderchest: "gshow.view.enderchest"
-    money: "gshow.view.money"
-    ping: "gshow.view.ping"
-    item: "gshow.view.item"
-    shulker: "gshow.view.shulker"
+    inventory: gshow.view.inventory
+    enderchest: gshow.view.enderchest
+    money: gshow.view.money
+    ping: gshow.view.ping
+    item: gshow.view.item
+    shulker: gshow.view.shulker
 
-config-version: 1 # Do not change this value
+# Do not change this value
+config-version: 2
 ```
 
 </details>
