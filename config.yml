@@ -3,6 +3,7 @@
 # Chat output messages (supports color codes, hex and placeholders if PlaceholderAPI is installed)
 messages:
   global:
+    help: '&e&lGSHOW &8/ &aUse [inv], [enderchest], [money], [ping], or [item] in chat to share!'
     no_permission: '&cYou don''t have permission to use this command!'
     reload_success: '&aGShow configuration reloaded successfully!'
   inventory:
@@ -79,4 +80,4 @@ permissions:
     shulker: gshow.view.shulker
 
 # Do not change this value
-config-version: 3
+config-version: 4
