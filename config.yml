@@ -18,8 +18,8 @@ messages:
     no_permission: '&cYou don''t have permission to view ender chests!'
     expired: '&cThis ender chest view has expired!'
   money:
-    enabled: true
-    format: '&e&lGSHOW &8/ &f{player} &7has &a{amount}'
+    enabled: true # Requires Vault to be installed
+    format: '&e&lGSHOW &8/ &f{player} &7has &a{amount}$'
     hover: '&eShows {player}''s balance'
     no_permission: '&cYou don''t have permission to view balances!'
     expired: '&cThis balance view has expired!'
@@ -62,9 +62,9 @@ patterns:
 
 # Settings
 settings:
-  view_timeout: 30
-  enable_live_updates: true
-  require_permission: false
+  view_timeout: 30 # Time in seconds before a view expires
+  enable_live_updates: true # Whether to enable live updates for views
+  require_permission: false # Whether to require permission for players to view
 
 # Permissions for commands and features
 permissions:
@@ -79,4 +79,4 @@ permissions:
     shulker: gshow.view.shulker
 
 # Do not change this value
-config-version: 2
+config-version: 3
