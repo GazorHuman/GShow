@@ -1,10 +1,13 @@
 # GShow
 
-A comprehensive Minecraft plugin that allows players to **share their inventory, ender chest, money, item-in-hand, and ping** information in chat with interactive **hover and click** functionality.
+A comprehensive Minecraft plugin that allows players to **share their inventory, ender chest, money, item-in-hand, and ping** information in chat with interactive **hover and click** functionality without installing any dependencies.
 
 ---
 
 ## ✨ Features
+
+- **Without Any Dependencies**
+  This plugin works even without installing any dependencies at all, except the money module
 
 - **Interactive Chat Display**  
   Players can type `[inv]`, `[enderchest]`, `[money]`, `[item]`, or `[ping]` in chat to share their data.
@@ -45,10 +48,10 @@ A comprehensive Minecraft plugin that allows players to **share their inventory,
 
 - **Required:**  
   - [Spigot](https://www.spigotmc.org/) or [Paper](https://papermc.io/) `1.16+`  
-  - [Vault](https://www.spigotmc.org/resources/vault.34315/)
 
 - **Optional:**  
-  - [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) (for advanced placeholders)
+  - [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) (Placeholders)
+  - [Vault](https://www.spigotmc.org/resources/vault.34315/) (Money Module)
 
 ---
 
@@ -78,8 +81,8 @@ messages:
     no_permission: '&cYou don''t have permission to view ender chests!'
     expired: '&cThis ender chest view has expired!'
   money:
-    enabled: true
-    format: '&e&lGSHOW &8/ &f{player} &7has &a{amount}'
+    enabled: true # Requires Vault to be installed
+    format: '&e&lGSHOW &8/ &f{player} &7has &a{amount}$'
     hover: '&eShows {player}''s balance'
     no_permission: '&cYou don''t have permission to view balances!'
     expired: '&cThis balance view has expired!'
@@ -122,9 +125,9 @@ patterns:
 
 # Settings
 settings:
-  view_timeout: 30
-  enable_live_updates: true
-  require_permission: false
+  view_timeout: 30 # Time in seconds before a view expires
+  enable_live_updates: true # Whether to enable live updates for views
+  require_permission: false # Whether to require permission for players to view
 
 # Permissions for commands and features
 permissions:
@@ -139,7 +142,7 @@ permissions:
     shulker: gshow.view.shulker
 
 # Do not change this value
-config-version: 2
+config-version: 3
 ```
 
 </details>
